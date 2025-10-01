@@ -25,3 +25,15 @@ videoInfos.forEach(videoInfo => {
     `;
     videoGrid.innerHTML = videoInfoHTML;
 });
+
+const menuButton = document.querySelector('.js-menu-button');
+const sideBar = document.querySelector('.js-left-side-bar');
+const sideBarLink = document.querySelectorAll('.js-sidebar-link');
+menuButton.addEventListener('click', () => {
+sideBar.classList.toggle('js-left-sidebar');
+sideBarLink.forEach(link => {
+    
+})
+
+
+});

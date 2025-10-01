@@ -216,6 +216,9 @@
     padding-top: 10px;
 
 }
+.js-left-sidebar {
+    width: 150px;
+}
 
 .sidebar-link {
     height: 76px;
@@ -225,7 +228,12 @@
     align-items: center;
     flex-direction: column;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
+.js-left-sidebar-link {
+    flex-direction: row;
+}
+
 
 .sidebar-link:hover {
     background-color: lightgray;
