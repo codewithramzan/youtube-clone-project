@@ -27,12 +27,14 @@ videoInfos.forEach(videoInfo => {
 });
 
 const menuButton = document.querySelector('.js-menu-button');
+
 const sideBar = document.querySelector('.js-left-side-bar');
-const sideBarLink = document.querySelectorAll('.js-sidebar-link');
+
+const sideBarLink = document.querySelectorAll('.js-sidbar-link');
 menuButton.addEventListener('click', () => {
 sideBar.classList.toggle('js-left-sidebar');
 sideBarLink.forEach(link => {
-    
+    link.classList.toggle('js-sidebar-link');
 })
 
 
