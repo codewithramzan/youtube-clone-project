@@ -1,43 +1,19 @@
 import {videoInfos} from './data/videoInfo.js';
-const videoGrid = document.querySelector('.js-video-grid');
-let videoInfoHTML = '';
-videoInfos.forEach(videoInfo => {
-    videoInfoHTML += `
-     <div class="video-1">
-        <div class="thumbnail">
-            <a href="${videoInfo.video}">
-                <img class="video-thumbnail" src="${videoInfo.thumbnail}" alt="thumbnail">
-            </a>
-            <div class="video-time">${videoInfo.time}</div>
-        </div>
-
-        <div class="video-info">
-            <div class="video-profile">
-                <img class="profile-image" src="${videoInfo.channelPhoto}" alt="profile-image">
-            </div>
-            <div class="video-titles">
-                <div class="title">${videoInfo.title}</div>
-                <div class="video-author">${videoInfo.ChannelName}</div>
-                <div class="video-status">${videoInfo.views}</div>
-            </div>
-        </div>
-    </div>
-    `;
-    videoGrid.innerHTML = videoInfoHTML;
-});
+import { renderHTML } from './data/renderHtml.js';
+renderHTML();
 
 const menuButton = document.querySelector('.js-menu-button');
-
 const sideBar = document.querySelector('.js-left-side-bar');
-
 const sideBarLink = document.querySelectorAll('.js-sidbar-link');
 const mainContent = document.querySelector('.js-video-grid');
-menuButton.addEventListener('click', () => {
-    sideBar.classList.toggle('js-left-sidebar');
-    sideBarLink.forEach(link => {
-        link.classList.toggle('js-sidebar-link');
+    menuButton.addEventListener('click', () => {
+        sideBar.classList.toggle('js-left-sidebar');
+        sideBarLink.forEach(link => {
+            link.classList.toggle('js-sidebar-link');
+        });
+        mainContent.classList.toggle('js-mainContent');
     });
-    mainContent.classList.toggle('js-mainContent');
-
-
+const homebtn = document.querySelector('.homebtn');
+homebtn.addEventListener('click',() => {
+    renderHTML();
 });
